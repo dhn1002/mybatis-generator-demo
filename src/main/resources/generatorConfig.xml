@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <!-- 数据库驱动包位置 -->
+    <classPathEntry location="E:\dhn\mysql-connector-java-5.1.38.jar" />
+    <context id="context1">
+        <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+            <property name="suppressAllComments" value="true" />
+        </commentGenerator>
+        <!--jdbc的数据库连接 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/demo" userId="root"
+                        password="123456" />
+
+        <!-- 实体类生成的位置 -->
+        <javaModelGenerator targetPackage="com.example.demo.entity"
+                            targetProject="src/main/java" />
+        <!-- *Mapper.xml 文件的位置 -->
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="src/main/resources" />
+        <!-- Mapper 接口文件的位置 -->
+        <javaClientGenerator targetPackage="com.example.demo.dao"
+                             targetProject="src/main/java" type="XMLMAPPER" />
+        <!--生成对应表及类名-->
+       <!-- <table schema="renren_fast" tableName="user"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>-->
+        <table tableName="user"
+               enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+        </table>
+    </context>
+</generatorConfiguration>
